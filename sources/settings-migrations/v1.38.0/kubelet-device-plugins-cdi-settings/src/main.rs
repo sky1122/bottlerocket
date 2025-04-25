@@ -6,7 +6,7 @@ use std::process;
 /// the node
 fn run() -> Result<()> {
     migrate(AddSettingsMigration(&[
-        "settings.kubelet-device-plugins.nvidia.device-list-strategy.cdi-cri",
+        "settings.kubelet-device-plugins.nvidia.device-list-strategy",
     ]))
 }
 
