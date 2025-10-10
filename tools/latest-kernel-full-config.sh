@@ -111,6 +111,9 @@ merge_kernel_configs() {
         KCONFIG_CONFIG=bottlerocket_${arch}_defconfig \
         ./scripts/kconfig/merge_config.sh "${script_args[@]}"
 
+        echo "===================cat bottlerocket_${arch}_defconfig start================"
+        cat bottlerocket_${arch}_defconfig
+        echo "===================cat bottlerocket_${arch}_defconfig end================"
         mv -f "bottlerocket_${arch}_defconfig" "${kernel_path}/config-full-bottlerocket-${arch}" || bail "Failed to create config-full-bottlerocket-${arch}"
         popd || bail "Could not move around - 'popd' failed in merge_config loop. Lets stop before we break anything further."
     done
